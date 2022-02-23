@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //OBLIGATORIAMENTE PARA HEROKU EL PUERTO TIENE QUE SE EN MAYUSCULAS LPM
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +16,7 @@ let usuarios = [
 
 
 app.get('/', (req, res) => { res.send('<h1>Hello World!</h1>'); });
-/*
+
 app.get('/api/usuarios', (req, res) => { res.json(usuarios); });
 
 app.get('/api/usuarios/:id', (req, res) => {
@@ -51,5 +51,5 @@ app.post('/api/usuarios/', (req, res) => {
 
     res.json(newUsuario);
 });
-*/
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
